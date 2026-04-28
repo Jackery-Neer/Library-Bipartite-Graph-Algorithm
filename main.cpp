@@ -19,7 +19,7 @@ void trendingBookRecommendations(const unordered_map<string, int>& bookPair, con
     cout << "\nThe Most Trending Books:\n";
     int limit = min((int)mostPopular.size(), 3);
     for (int i = 0; i < limit; i++) {
-        cout << i + 1 << ". " << mostPopular[i].second << " (Has " << mostPopular[i].first << " borrows\n";
+        cout << i + 1 << ". " << mostPopular[i].second << " (Has " << mostPopular[i].first << " borrows)\n";
     }
 }
 
@@ -73,7 +73,7 @@ int main() {
 
     vector<string> userCatalog = {"Rose", "Bill", "Judith", "Marcus", "John"};
 
-    cout << "Welcome to the Library Recommendation System";
+    cout << "Welcome to the Library Recommendation System\n";
 
     cout << "What is your name?\n";
     string name;
@@ -98,8 +98,8 @@ int main() {
 
     string bestMatch = "";
     string nextBestMatch = "";
-    int nextSimilar = -1;
-    int maxSimilar = -1;
+    int nextSimilar = 0;
+    int maxSimilar = 0;
     unordered_map<string, int> bookPair;
 
     for (const auto& [neighbor, books] : Graph) {
@@ -128,7 +128,7 @@ int main() {
     }
     if (bestMatch != "") {
         cout << "Based on your past recommendations " << bestMatch << "'s list is the most similar.\n";
-        cout << bestMatch << " has " << maxSimilar << " similarly borrowed books to you";
+        cout << bestMatch << " has " << maxSimilar << " similarly borrowed books to you\n";
     } else {
         cout << "You have no similar books to anybody.\n";
         trendingBookRecommendations(bookPair, userSet);
