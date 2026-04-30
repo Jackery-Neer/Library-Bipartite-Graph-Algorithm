@@ -115,7 +115,7 @@ int main() {
             }
         }
 
-
+        
         if ((currentSimilar > maxSimilar) && hasNewRecommendation) {
             nextSimilar = maxSimilar;
             maxSimilar = currentSimilar;
